@@ -203,27 +203,24 @@ public class App extends Application implements IAnimalMoveObserver{
         }
     }
 
+    private void update() {
+        plotUpdate();
+        this.gridPane.getChildren().clear();
+        this.gridPane.getRowConstraints().clear();
+        this.gridPane.getColumnConstraints().clear();
+        showMap();
+    }
+
     @Override
     public void lastMapUpdate() {
-        Platform.runLater(() -> {
-            this.gridPane.getChildren().clear();
-            this.gridPane.getRowConstraints().clear();
-            this.gridPane.getColumnConstraints().clear();
-            showMap();
-        });
+        Platform.runLater(this::update);
     }
 
     @Override
     public void mapUpdate() {
         Platform.runLater(() -> {
             active = GameMenu.isActive();
-            if (active) {
-                plotUpdate();
-                this.gridPane.getChildren().clear();
-                this.gridPane.getRowConstraints().clear();
-                this.gridPane.getColumnConstraints().clear();
-                showMap();
-            }
+            if (active) update();
         });
     }
 }
