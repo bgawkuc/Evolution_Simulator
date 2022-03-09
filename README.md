@@ -10,9 +10,8 @@ This simulator is based on simple Darwin's Theory - only strongest organisms can
 
 The colourful squares symbolize animals and plants according to the legend.
 
-<video loop width=900px>
-    <source src="README_files/simulation_film.mp4">
-</video>
+<img src="README_files/simulation_film.gif" width=900px>
+
 
 ### Before simulation
 Simulation takes place on the step-map with small jungle in the middle. 
@@ -56,5 +55,7 @@ After clicking on "Animals with dominant genotype" button, information will appe
 After clicking on "Save to CSV file" all statistics will be saved to CSV file.
 
 <img src="README_files/csv_file.png" width=900px>
+
+Other specifications about this project can be found here: <a href="https://github.com/apohllo/obiektowe-lab/tree/master/proj1">click</a>
 
 
