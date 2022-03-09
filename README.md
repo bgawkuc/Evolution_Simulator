@@ -44,10 +44,10 @@ You can track:
 * dominant (the most common) genotype
 * average life span, child number and curreny energy<br>
 
-In addition, a graph is drawn showing the number of animals and plants
+In addition, a graph is drawn showing the number of animals and plants.
 
 ### Animals with dominant genotype
-After clicking on "Animals with dominant genotype" button, information will appear with the coordinates of the fields on which, all alive animals with dominant genotype, are located. The coordinates are calculated in the same way as in the first quadrant of the coordinate system
+After clicking on "Animals with dominant genotype" button, information will appear with the coordinates of the fields on which, all alive animals with dominant genotype, are located. The coordinates are calculated in the same way as in the first quadrant of the coordinate system.
 
 <img src="README_files/dominant_genotype.png" width=900px>
 
