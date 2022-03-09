@@ -54,7 +54,6 @@ public class WorldMap implements IPositionChangeObserver{
         animal.addObserver(this);
     }
 
-//    przy dodaniu zwierzęcia do mapy dodaje jego genotyp hash mapy
     private void addGenotype(int[] newGenotype) {
         for (Map.Entry<int[],Integer> entry: mapGenotypes.entrySet()) {
             int[] key = entry.getKey();
@@ -74,7 +73,7 @@ public class WorldMap implements IPositionChangeObserver{
     public IMapElement objectAt(Vector2d position) {
         for (Animal animal: animals) {
             if (animal.getPosition().equals(position)) {
-//              zwracam najsilniejsze(pod wzgledem energii) zwierze
+//              returns strongest animal
                 ArrayList<Animal> strongestAnimals = mapAnimals.get(animal.getPosition()).findStrongestAnimals();
                 Random random = new Random();
                 int randomIdx = random.nextInt(strongestAnimals.size());

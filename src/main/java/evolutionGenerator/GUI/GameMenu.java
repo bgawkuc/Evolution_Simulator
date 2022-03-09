@@ -116,7 +116,7 @@ public class GameMenu {
         return text;
     }
 
-//    stworzone na podstawie https://docs.oracle.com/javafx/2/charts/line-chart.htm#CIHGBCFI
+//  based on https://docs.oracle.com/javafx/2/charts/line-chart.htm#CIHGBCFI
     private void createLineChart() {
         final NumberAxis xAxis = new NumberAxis();
         final NumberAxis yAxis = new NumberAxis();

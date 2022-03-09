@@ -92,7 +92,7 @@ public class SimulationEngine implements Runnable {
                 Statistics.updateDailyStatistics(animals, deadAnimals, map.plants);
                 simulationDay++;
             }
-//            jak gra jest zapauzowana
+//          when game is paused
             else {
                 updateAnimalsLast();
                 while (!active) {
@@ -103,7 +103,7 @@ public class SimulationEngine implements Runnable {
         }
         updateAnimals();
 
-//        przed wyłączeniem poczeka chwile
+//      it'll wait a little bit before ending
         try {
             Thread.sleep(700);
         } catch (InterruptedException e) {
@@ -138,7 +138,7 @@ public class SimulationEngine implements Runnable {
         statistics.updateAverageCurrentEnergy(animals);
     }
 
-//    sprawdza na które rośliny wszedł zwierzak/i, wtedy dodaje im odpowiednią ilość energii i usuwa roślinę
+//  check which plants are eaten
     private void eatPlants() {
         if (animals.size() > 0) {
             ArrayList<Plant> removePlants = new ArrayList<>();
@@ -172,9 +172,7 @@ public class SimulationEngine implements Runnable {
     }
 
 
-//    usuwa martwe zwierzęta z lokalnej tablicy animals,
-//    tablicy animals i mapAnimals w WorldMap
-//    dla gry magicznej gdyby ilość zwierząt w jakims momencie (po usunięciu okreslonej ilosci) wyniosła 5 to dodaje 5
+//  delete dead animals, during magic game adds additional 5 animals
     private void removeDeadAnimals() {
         ArrayList<Animal> animalsToCopy = new ArrayList<>();
 
@@ -301,11 +299,7 @@ public class SimulationEngine implements Runnable {
             return dominantPositions;
         }
 
-//      wyświetla pozycje wszystkich ŻYWYCH zwierzęt, które mają dominujący genotyp
-//      (czasem pozycja się powtórzy tzn, że kilka zwierząt na tym samym polu ma dominujący genotyp)
-//      dominujący genotyp jest wybierany wśród genotypów wszystkich zwierzat, które powstały (również martwych)
-//      UWAGA - po kliknięciu na daną płytkę nie zawsze pokaże się ten genotyp dominujący, ponieważ na polu może
-//      znajdować się więcej niż 1 zwierze - wtedy wyświetka się to co ma najwięcej energii
+//    display positions of all alive animals with dominant genotype
         private void displayAnimalsClicked() {
             displayAnimals.setOnAction( event ->  {
                 if (!active) {

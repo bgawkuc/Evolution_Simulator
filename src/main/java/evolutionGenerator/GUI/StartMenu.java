@@ -70,5 +70,4 @@ public class StartMenu {
         vBox.getChildren().add(game);
         return gameChoice;
     }
-
 }

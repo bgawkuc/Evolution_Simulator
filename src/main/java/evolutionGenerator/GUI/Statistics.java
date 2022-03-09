@@ -64,8 +64,7 @@ public class Statistics {
 
     public void updateAverageCurrentEnergy(ArrayList<Animal> animals) {averageCurrentEnergy.setText("Average current energy " + countAverageCurrentEnergy(animals));}
 
-//    nie było doprecyzwane o jakie zwierzęta (żywe/martwe/wszystkie) chodzi,
-//    więc biorę pod uwage genotypy wszystkich zwierząt jakie pojawiły się od początku gry
+//  finds dominant genotype among live and dead animals
     public void updateDominantGenotype(Map<int[],Integer> mapGenotypes) {
         int[] genotype = new int[32];
         int cnt = 0;
@@ -82,7 +81,7 @@ public class Statistics {
         dominantGenotype.setText("Dominant genotype: " + Arrays.toString(genotype));
     }
 
-    //    średnia dlugość zycia obliczana na bazie wszystkich zmarłych zwierząt
+//  average life span calculated on the basis of live and dead animals
     private static double countAverageLifeSpan(ArrayList<Animal> deadAnimals) {
         double result = 0;
 
@@ -95,7 +94,7 @@ public class Statistics {
         return result;
     }
 
-    //    średnia ilość dzieci obliczana na podstawie żyjących rodziców
+//  average child number calculated on the basis of live parents
     private static double countAverageChildNumber(ArrayList<Animal> animals) {
         double result = 0;
 
@@ -108,7 +107,7 @@ public class Statistics {
         return result;
     }
 
-    //    średnia ilość energii obliczana na bazie żyjących zwierząt
+//    average energy calculated on the basis of live parents
     private static double countAverageCurrentEnergy(ArrayList<Animal> animals) {
         double result = 0;
 
@@ -121,8 +120,7 @@ public class Statistics {
         return result;
     }
 
-//    codziennie dodaje liczbę: żywych zwierząt, roślin, średnią dłg życia,
-//    średnią ilość dzieci (dla żywych zwierząt), średnią ilość energii
+
     public static void updateDailyStatistics(ArrayList<Animal> animals, ArrayList<Animal> deadAnimals, ArrayList<Plant> plants) {
         ArrayList<Number> newStatistics = new ArrayList<>();
         newStatistics.add(animals.size());
@@ -133,7 +131,7 @@ public class Statistics {
         dailyStatistics.add(newStatistics);
     }
 
-//  zapisuje wszystkie wyniki statystyk do pliku i na koniec wylicza z nich średnią
+//  save all statistics to file and at the end calculate the average values
     public void saveToFile() throws FileNotFoundException {
         File file = new File("statistics.csv");
         PrintWriter printWriter = new PrintWriter(file);

@@ -107,7 +107,7 @@ public class App extends Application implements IAnimalMoveObserver{
         if (ratio >= Math.min(width,height) || ratio < 0) throw new IllegalArgumentException("Ratio must be smaller than width and height. Ratio can't be negative number");
     }
 
-//    pola są numerowane współrzędnymi (x,y) w ten sam sposób co w 1 ćwiartce układu współrzędnych
+//    fields are numbered in the same way as in the first quadrant of the coordinate system
     private void showMap() {
         Vector2d lowerCorner = map.getLowerCorner();
         Vector2d upperCorner = map.getUpperCorner();
@@ -171,7 +171,7 @@ public class App extends Application implements IAnimalMoveObserver{
                 if (map.isOccupied(vector2d) ) {
                     IMapElement object = map.objectAt(vector2d);
 
-//                    jeśli na polu jest więcej niż 1 zwierzę to wyświetla się to co ma najwięcej energii
+//                   if there is more than 1 animal in the field, the strongest is displayed
                     if (object.isAnimal()) {
                         HBox cell = new HBox();
                         cell.setPrefSize(20,20);
@@ -179,7 +179,7 @@ public class App extends Application implements IAnimalMoveObserver{
                         cell.setBackground(new Background(new BackgroundFill(Color.rgb(colors[0],colors[1],colors[2]), null, null)));
                         gridPane.add(cell,x,map.getUpperCorner().y - y,1,1);
 
-//                        po kliknięciu na zwierzę wyświetli się jego genotyp
+//                      after clicking on animal his genotype will be shown
                         int takeX = x;
                         int takeY = y;
 

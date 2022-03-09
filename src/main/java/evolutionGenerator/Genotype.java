@@ -22,7 +22,7 @@ public class Genotype {
         int border;
         int[] moreEnergyGen, lessEnergyGen, childGenotype = new int[GENOTYPE_LENGTH];
 
-//       czy genotyp rodzica, który ma więcej energii ma zajmować lewą część
+//      whether the genotype of the more energetic parent occupies the left side
         boolean moreLeft = new Random().nextBoolean();
 
         if (animal1.getCurrentEnergy() > animal2.getCurrentEnergy()) {

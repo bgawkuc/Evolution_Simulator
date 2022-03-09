@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
-//dla odpowiedniej komórki (x,y) zawiera zbiór zwierząt, które się na niej znajdują
+// contain animals that are in the field with coordinates (x,y)
 public class AnimalCell {
     private final Vector2d position;
     private final List<Animal> animals = new LinkedList<>();
@@ -26,7 +26,7 @@ public class AnimalCell {
         if (animals.isEmpty()) map.mapAnimals.remove(position);
     }
 
-//    zwraca 2 zwierzęta(o ile takie istnieją-jak nie to pusta lista), których energia jest największa wśród wszystkich
+//   returns 2 strongest animals (with the biggest amount of energy)
     public ArrayList<Animal> findTwoStrongestAnimals() {
         ArrayList<Animal> twoStrongestAnimals = new ArrayList<>();
         ArrayList<Animal> strongestAnimals = findStrongestAnimals();
@@ -67,7 +67,7 @@ public class AnimalCell {
         }
     }
 
-//    zwraca listę zwierząt(czasem tylko jedno) mających najwięcej enrgii
+//  returns all strongest animals
     public ArrayList<Animal> findStrongestAnimals() {
         ArrayList<Animal> strongestAnimals = new ArrayList<>();
         double mostEnergy = 0;

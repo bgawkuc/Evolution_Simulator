@@ -1,6 +1,5 @@
 package evolutionGenerator;
 
-
 public enum MapDirection {
     NORTH,
     NORTH_EAST,

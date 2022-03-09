@@ -64,8 +64,8 @@ public class Animal implements IMapElement {
         return idToDirection(this.genotype[idx]);
     }
 
-//    północ(0) i południe(4) powodują ruch - reszta to skręt o odpowiednio 45,90,135 itd
-//    ruch zwiększa długość życia o 1 i zmniejsza ilość energii
+
+//   selecting north(0) or south(4) cause a field change. Other directions cause rotation by 45,90,135... degrees
     public void move(double moveEnergy) {
         MapDirection rotation = randomMove();
 
@@ -92,7 +92,7 @@ public class Animal implements IMapElement {
 
     public void addChild() {childNumber++;}
 
-//    zmienia kierunek z zależnosci od id obrotu: zakres 0-7
+//   change direction depending on directionID (from 0 to 7)
     private MapDirection changeDirection(int directionId) {
         while (directionId > 0) {
             this.direction = this.direction.next();
